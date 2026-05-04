@@ -1,0 +1,557 @@
+/* ---------------------------- CABEÇALHO ---------------------------- */
+header {
+    display: flex; /* como o flexbox está dentro de <header>, não foi preciso criar um container para utilizá-lo */
+    align-items: center; /* alinhamento de todos os itens verticalmente no centro */
+    justify-content: space-between; /* imagens "empurradas" para as extremidades esquerda e direita */
+    width: 100%; /* cabeçalho ocupa todo o espaço disponível na tela */
+    padding: 10px 12px;
+    box-sizing: border-box; /* padding sendo contado dentro da largura do header, para não estourar a largura */
+}
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    text-transform: uppercase; /* texto deixado em caixa alta*/
+    color:yellowgreen;
+    margin: 0;
+    text-align: center;
+    flex: 1; /* título h1 ocupa todo o espaço do meio, entre os ícones */
+}
+#icone1,
+#icone2 {
+    height: 100px; /* largura fixa dos ícones do cabeçalho */
+}
+ul.menu { /* lista */
+    list-style-type: none; /* tira as marcações (bolinhas) dos itens */
+    margin: 0px; /* remove as margens da lista */
+    padding: 0px; /* remove o preenchimento da lista */
+    font-size: 20px;
+    font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    color:whitesmoke;
+    display:flex; /*ativação do flexbox*/
+    justify-content: center; /* parágrafo alinhado no centro do espaço da tela */
+    gap: 40px; /*espaço entre os itens da lista*/
+} 
+ul.menu li a { /* links */
+    display: block; 
+    text-decoration: none; /* removidos os sublinhados nos links */
+    color:whitesmoke;
+}
+/* ---------------------------- INÍCIO ---------------------------- */
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    max-width: 2000px; /* largura máxima para os itens do grid*/
+    margin: 0 auto; /* centraliza o grid no centro da tela*/
+}
+#coluna1,
+#coluna2 {
+    padding: 10px;
+}
+#apresentacao {
+    font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    font-size: 22.5px;
+    color: whitesmoke;
+    width: 100%;
+    text-align: left;
+    padding-right: 40%;
+}
+.destaque{ /* destaque num trecho do texto, somente para fazer um charme decorativo */
+    color: yellowgreen; 
+    font-weight: bold; 
+}
+#michele {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+}
+#inicio {
+    background-color: rgb(12,12,12);
+}
+/* ---------------------------- SOBRE MIM ---------------------------- */
+.gridSobreMim {
+    display: grid; /* primeiro passo para começar a usar o grid, ativando-o para essa div e aplicando a mesma formatação para todos os filhos do gridSobreMim */
+    grid-template-columns: 1fr 1fr 1fr; /* criadas 3 colunas, cada qual ocupando 1/3 do espaço disponível no width */
+    grid-template-rows: auto auto 100px auto auto 100px auto auto; /* criadas 8 linhas com altura automática. os 100px no meio representam os espaços fixos entre os blocos*/
+    gap: 6px; /* espaçamento entre as células do grid, tanto horizontal quanto vertical */
+    padding: 20px; /* espaço de preenchimento entre a borda do div e os textos */
+    box-sizing: border-box;
+    font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    max-width: 2000px;
+    margin: 0 auto; /* centraliza o grid no centro da tela*/
+}
+#tituloBloco1{
+    grid-column: 1/4; /* titulo ocupa todas as colunas*/
+    grid-row: 1; /* linha 1 */
+    text-align: left;
+}
+#textoBloco1 {
+    grid-column: 1/3; /* ocupa colunas 1 e 2 */
+    grid-row: 2; /* linha 2 */
+    text-align: left;
+}
+#tituloBloco2 {
+    grid-column: 1/4; /* titulo ocupa todas as colunas*/
+    grid-row: 4; /* linha 4 */
+    text-align: right;
+}
+#textoBloco2 {
+    grid-column: 2/4; /* colunas 2 e 3 */
+    grid-row: 5; /* linha 5 */
+    text-align: right;
+}
+#tituloBloco3{
+    grid-column: 1/4; /* titulo ocupa todas as colunas*/
+    grid-row: 7; /* linha 7 */
+    text-align: left;
+}
+#textoBloco3 {
+    grid-column: 1/3; /* colunas 1 e 2 */
+    grid-row: 8; /* linha 8 */
+    text-align: left;
+}
+.tituloSobreMim{
+    font-size: 50px;
+    color:yellowgreen;
+    text-transform: uppercase; /* titulos em caixa alta */
+    margin:0;
+}
+.textoSobreMim{
+    font-size: 22.5px; 
+    color: whitesmoke;
+    margin-left: 0;
+}
+#sobreMim{
+    background-color: rgb(32, 32, 32);
+}
+/* ---------------------------- FORMAÇÃO ---------------------------- */
+.gridFormacao {
+    display: grid; /* grid ativado para essa div, aplicando a mesma formatação para todos os filhos do gridFormacao */
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas de mesmo tamanho*/
+    gap: 8px; /* espaçamento entre as células do grid */
+    box-sizing: border-box;
+    font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    color:whitesmoke;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 2000px;
+    align-items: center;
+}
+.tituloFormacao {
+    grid-column: 1/4; /*titulo vai ocupar as 3 colunas, mesclando-as*/
+    font-size: 50px;
+    text-transform: uppercase; /* texto do título em caixa alta*/
+    margin: 48px 0 8px 0; /*espaço entre a parte de cima (de 48px) e a de baixo (de 8px) para que um bloco nao fique "colado" no outro*/
+    border-bottom: 2px solid yellowgreen; /* linha decorativa */
+}
+.subtituloFormacao {
+    grid-column: 1/4; /*subtitulo também ocupa as 3 colunas, mesclando-as*/
+    font-size: 17.5px;
+    color: rgb(211, 211, 211);
+    letter-spacing: 2px;
+    padding-bottom: 2px;
+    margin: 0;
+}
+.textoFormacaoDireita {
+    grid-column: 2/4;
+    padding: 20px;
+    font-size: 22.5px;
+    margin: 0;
+    text-align:left;
+    align-self: center;
+}
+.textoFormacaoEsquerda {
+    grid-column: 1/3;
+    padding: 20px;
+    font-size: 22.5px; 
+    margin: 0;
+    text-align:right;
+    align-self: center;
+}
+.imagemFormacaoEsquerda {
+    grid-column: 1/2;
+    display: flex;
+    justify-content: right;
+    padding: 20px;
+}
+.imagemFormacaoDireita {
+    grid-column: 3/4;
+    display: flex;
+    justify-content: left;
+    padding: 20px;
+}
+.imagemFormacaoDireita,
+.imagemFormacaoEsquerda {
+    width: auto; /* ocupa a largura disponível da coluna */
+    height: 300px; /* altura proporcional, sem distorcer */
+}
+#espacoEntreBlocos{
+    grid-column: 1/4;
+    padding: 100px; /*coloquei 100px de padding para dar o mesmo espaçamento que utilizei na página "sobre mim", de forma a uniformizar o estilo do site*/
+}
+#Formacao{
+    background-color: rgb(12, 12, 12);
+}
+/* ---------------------------- PORTFÓLIO ---------------------------- */
+.gridPortfolio {
+    display: grid; /* grid ativado para essa div, aplicando a mesma formatação para todos os filhos do gridFormacao */
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas de mesmo tamanho*/
+    grid-template-rows: auto auto;
+    gap: 8px; /* espaçamento entre as células do grid */
+    box-sizing: border-box;
+    font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    color:whitesmoke;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 2000px;
+    align-items: center;
+    grid-auto-flow: column;
+    padding-top: 30px;
+}
+.iconesPortfolio{
+    width: auto; /* ocupa a largura disponível da coluna */
+    height: auto; /* altura proporcional, sem distorcer */
+    max-height: 200px;
+}
+#introPortfolio{
+    font-size: 20px;
+    font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    color:whitesmoke;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 2000px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgb(182, 72, 57);
+}
+#portfolio{
+    background-color: rgb(32, 32, 32);
+}
+/* ---------------------------- CONTATO ---------------------------- */
+#formularioContato{
+    border-collapse: separate;
+    border-spacing: 10px;
+    padding-top: 30px;
+    font-size: 20px;
+    font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    color:whitesmoke;
+    text-align: left;
+    margin: 0 auto; 
+    width: 300px;
+}
+#introContato{
+    font-size: 20px;
+    font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    color:whitesmoke;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 2000px;
+    padding-bottom: 30px;
+}
+#nomeContato,
+#emailContato,
+#msgContato,
+#botaoContato{
+    font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    font-size: 20px;
+}
+#contato{
+    background-color: rgb(12, 12, 12);
+}
+/* ---------------------------- AJUSTES MOBILE ---------------------------- */
+/* ajuste de visualização para telas médias (tablets) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /*cabeçalho*/
+    #icone1,
+    #icone2 {
+        height: 80px; /* ícones do menu menores para melhor visualização do menu */
+    }
+    h1{
+        font-size: 36px;
+    }
+    /*menu*/
+    ul.menu {
+        gap: 20px; /* um pouco menos de espaço entre os itens */
+        font-size: 18px;
+    }
+    /*pagina inicial*/
+    .container {
+        grid-template-columns: 1fr; /* uma só coluna para melhor visualização */
+    }
+    #michele {
+        max-width: 60%; /* imagem menor */
+        margin: 0 auto;
+    }
+    #apresentacao {
+        font-size: 20px;
+        text-align: center;
+        padding-right: 10%;
+    }
+    /*pagina sobre mim*/
+    .gridSobreMim {
+        grid-template-columns: 1fr;  /* coluna única */
+        grid-template-rows: auto; /* quantidade de linhas gerada automaticamente */
+        padding: 20px;
+    }
+    #tituloBloco1,
+    #tituloBloco2,
+    #tituloBloco3 {
+        grid-column: 1/2; /* titulos ocupando a coluna toda */
+        font-size: 36px;
+        text-align: center;
+    }
+    #textoBloco1,
+    #textoBloco2,
+    #textoBloco3 {
+        grid-column: 1/2;
+        font-size: 18px;
+        text-align: left;
+    }
+    #textoBloco2 {
+        text-align: left; /* na visualização de PC, estava à direita pois tinham colunas alternadas; aqui, foi padronizado*/
+    }
+    /*pagina formacao*/
+    .gridFormacao {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .tituloFormacao {
+        grid-column: 1/2;
+        font-size: 34px;
+        text-align: center;
+        margin: 30px 0 8px 0;
+    }
+    .subtituloFormacao {
+        grid-column: 1/2;
+        font-size: 15px;
+        text-align: center;
+    }
+    .textoFormacaoDireita,
+    .textoFormacaoEsquerda {
+        grid-column: 1/2;
+        font-size: 18px;
+        text-align: left;
+        padding: 10px 0;
+    }
+    .imagemFormacaoEsquerda,
+    .imagemFormacaoDireita {
+        grid-column: 1/2;
+        height: auto;
+        justify-content: center;
+        padding: 15px 0;
+    }
+    .imagemFormacaoEsquerda img,
+    .imagemFormacaoDireita img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+     #espacoEntreBlocos {
+        grid-column: 1 / 2;
+        padding: 30px;
+    }
+    /*pagina portfolio*/
+    #introPortfolio {
+        font-size: 17px;
+        padding: 0 20px 25px 20px;
+    }
+    .gridPortfolio {
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+        padding-top: 20px;
+        gap: 12px;
+    }
+    .iconesPortfolio {
+        max-height: 150px;
+        display: block;
+        margin: 0 auto;
+    }
+     .legendaPortfolio {
+        font-size: 17px;
+        text-align: center;
+        padding: 0 20px 30px 20px;
+    }
+    /*pagina formulario*/
+    #introContato {
+        font-size: 18px;
+        padding: 0 20px 25px 20px;
+    }
+    #formularioContato {
+        width: 90%;
+        font-size: 18px;
+    }
+    #nomeContato,
+    #emailContato {
+        width: 100%;
+        font-size: 18px;
+        box-sizing: border-box;
+    }
+    #msgContato {
+        width: 100%;
+        font-size: 18px;
+        box-sizing: border-box;
+        resize: vertical;
+    }
+    #botaoContato {
+        width: 100%;
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+/* ajuste de visualização para telas pequenas (celulares) */
+@media only screen and (max-width: 480px) { 
+    /*cabeçalho*/
+    header {
+        flex-direction: column; /* empilha os elementos verticalmente */
+        text-align: center;
+        padding: 10px;
+    }
+    #icone1,
+    #icone2 {
+        width: 60px;/* redução do tamanho das imagens do menu */
+        height: 60px;
+    }
+    h1{
+        font-size: 28px;
+        margin: 8px 0;
+    }
+    /*menu*/
+    ul.menu {
+        flex-direction: column; /* itens do menu em coluna */
+        align-items: center;
+        gap: 10px; /* menos espaço entre os itens */
+        font-size: 16px;
+        padding: 10px 0;
+    }
+    /*pagina inicial*/
+    .container {
+        grid-template-columns: 1fr; /* uma só coluna */
+    }
+    #michele {
+        max-width: 80%; /* imagem menor, centralizada */
+        margin: 0 auto;
+    }
+    #apresentacao {
+        font-size: 18px;
+        text-align: center;
+        padding: 10px;
+    }
+    /*página sobre mim*/
+    .gridSobreMim {
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto;  /* linhas automáticas, sem os 100px fixos */
+        padding: 15px;
+    }
+    #tituloBloco1,
+    #tituloBloco2,
+    #tituloBloco3 {
+        grid-column: 1/2; /* titulos ocupam a única coluna disponível */
+        font-size: 28px; /* tamanho do título um pouco menor */
+        text-align: center;
+    }
+    #textoBloco1,
+    #textoBloco2,
+    #textoBloco3 {
+        grid-column: 1/2; /* textos tbm ocupam a única toda */
+        font-size: 16px;
+        text-align: left;
+    }
+    #tituloBloco2 { /* na visualização de PC, estava à direita pois tinham colunas alternadas; aqui, foi padronizado*/
+        text-align: center;
+    }
+
+    #textoBloco2 {
+        text-align: left;
+    }
+    /* página formacao*/
+    .gridFormacao {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    .tituloFormacao {
+        grid-column: 1/2;
+        font-size: 26px;
+        text-align: center;
+        margin: 24px 0 8px 0; /* reduz o espaço entre blocos */
+    }
+    .subtituloFormacao {
+        grid-column: 1/2;
+        font-size: 14px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    .textoFormacaoDireita,
+    .textoFormacaoEsquerda {
+        grid-column: 1/2;
+        font-size: 16px;
+        text-align: left;
+        padding: 10px 0;
+    }
+    .imagemFormacaoEsquerda,
+    .imagemFormacaoDireita {
+        grid-column: 1/2;
+        height: auto;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    .imagemFormacaoEsquerda img,
+    .imagemFormacaoDireita img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+    }
+    #espacoEntreBlocos {
+        grid-column: 1 / 2;
+        padding: 20px;
+    }
+    /*pagina portfolio*/
+    #introPortfolio {
+        font-size: 16px;
+        padding: 0 15px 20px 15px;
+    }
+    .gridPortfolio {
+        grid-template-columns: 1fr;  /* uma coluna só */
+        grid-auto-flow: row;         /* fluxo volta a ser por linha */
+        padding-top: 15px;
+        gap: 10px;
+    }
+    .iconesPortfolio {
+        max-height: 120px;
+        display: block;
+        margin: 0 auto;  
+    }
+    .legendaPortfolio {
+        font-size: 15px;
+        text-align: center;
+        padding: 0 15px 30px 15px; 
+    }
+    /*pagina formulario*/
+    #introContato {
+        font-size: 16px;
+        padding: 0 15px 20px 15px;
+    }
+    #formularioContato {
+        width: 100%;
+        font-size: 16px;
+        border-spacing: 5px;
+    }
+    #nomeContato,
+    #emailContato {
+        width: 100%;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    #msgContato {
+        width: 100%;
+        font-size: 16px;
+        box-sizing: border-box;
+        resize: vertical;
+    }
+    #botaoContato {
+        width: 100%; /* botão ocupando toda a largura da célula */
+        font-size: 16px;
+        padding: 10px;
+    }
+}

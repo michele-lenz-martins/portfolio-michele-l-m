@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Michele L. M.</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="contato">
+    <header> <!-- aqui fica o cabeçalho do meu site; é onde eu coloquei o título e outros elementos iniciais-->
+    <img id="icone1" src="img/icone1.png" alt="ícones de um cd e de um mouse em estilo de pixel art">
+    <h1>Michele L. M.</h1>
+    <img id="icone2" src="img/icone2.png" alt="ícones de um disquete e de um computador em estilo de pixel art">
+    </header>
+    <nav>
+    <hr>
+    <ul class="menu"> <!-- estabeleci a classe "menu" para organizar os links de forma conjunta -->
+        <li><a href="index.html">Página inicial</a></li>
+        <li><a href="sobre-mim.html">Sobre mim</a></li>
+        <li><a href="formacao.html">Formação</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <hr>
+    </nav>
+    <br>
+    <p id="introContato">Se você gostaria de saber mais sobre meu trabalho, discutir uma ideia ou avaliar uma possível colaboração, será um prazer conversar. Use o formulário abaixo para me enviar uma mensagem, e responderei assim que possível.</p>
+    <table id="formularioContato">
+        <form>
+            <tr>
+                <td><label for="nome">Nome:</label></td>
+                <td><input type="text" name="nome" id="nomeContato" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">E-mail:</label></td>
+                <td><input type="email" name="email" id="emailContato" required></td>
+            </tr>
+            <tr>
+                <td><label for="msg">Mensagem:</label></td>
+                <td><textarea id="msgContato" name="msg" rows="7" cols="60" placeholder="Digite sua mensagem..."></textarea></td> <!-- área de texto de mensagem de e-mail. o elemento placeholder permite que o texto "Digite sua mensagem" seja exibido apenas em forma de auxílio; quando o usuário inputar a mensagem, o texto some-->
+            </tr>
+            <tr>
+            <td></td>
+            <td><button id="botaoContato">Enviar</button></td>
+            </tr>
+        </form>
+    </table>
+    <script src="js/script.js"></script>
+</body>
+</html>
