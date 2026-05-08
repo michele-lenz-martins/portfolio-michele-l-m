@@ -7,22 +7,22 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="sobreMim">
-    <header> <!-- aqui fica o cabeçalho do meu site; é onde eu coloquei o título e outros elementos iniciais-->
-    <img id="icone1" src="img/icone1.png" alt="ícones de um cd e de um mouse em estilo de pixel art">
-    <h1>Michele L. M.</h1>
-    <img id="icone2" src="img/icone2.png" alt="ícones de um disquete e de um computador em estilo de pixel art">
+    <header class="fundoCinza"> <!-- aqui fica o cabeçalho do meu site; é onde eu coloquei o título e outros elementos iniciais-->
+        <div id="topoHeader"> <!--criei uma div para organizar a parte de cima do site (cabeçalho), para não empilhar com o menu principal com os links -->
+            <img id="icone1" src="img/icone1.png" alt="ícones de um cd e de um mouse em estilo de pixel art">
+            <h1>Michele Lenz Martins</h1>
+            <img id="icone2" src="img/icone2.png" alt="ícones de um disquete e de um computador em estilo de pixel art">
+        </div>
+        <nav>   
+            <ul class="menu"> <!-- estabeleci a classe "menu" para organizar os links de forma conjunta -->
+                <li><a href="index.html">Página inicial</a></li>
+                <li><a href="sobre-mim.html">Sobre mim</a></li>
+                <li><a href="formacao.html">Formação</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-    <hr>
-    <ul class="menu"> <!-- estabeleci a classe "menu" para organizar os links de forma conjunta -->
-        <li><a href="index.html">Página inicial</a></li>
-        <li><a href="sobre-mim.html">Sobre mim</a></li>
-        <li><a href="formacao.html">Formação</a></li>
-        <li><a href="portfolio.html">Portfólio</a></li>
-        <li><a href="contato.html">Contato</a></li>
-    </ul>
-    <hr>
-    </nav>
     <div class="gridSobreMim"> <!-- div principal na qual está organizado todo o conteúdo da página em grid (linhas e colunas) -->
         <h3 id="tituloBloco1" class="tituloSobreMim">Minha Trajetória</h3>
         <p id="textoBloco1" class="textoSobreMim">Nasci em Videira, no Oeste de Santa Catarina, e, por ter crescido no interior, a tecnologia foi entrando aos poucos na minha rotina. Na infância, eu adorava brincar ao ar livre, mas, com o tempo, as brincadeiras foram dividindo espaço com os videogames e, depois, com o computador. Meu primeiro contato com um computador foi com uma máquina rodando Windows 98 — o mesmo ano em que nasci, então tenho um carinho especial por esse sistema. Conforme fui crescendo, passei muitas horas na oficina do meu pai, cercada de placas eletrônicas que, para mim, pareciam pequenas cidades. Ali, a curiosidade sempre falou mais alto, e foi só uma questão de tempo até eu me apaixonar por eletrônica e, enfim, entender a lógica por trás dessas “cidades”, e, quem sabe, começar a construir as minhas próprias. </p>
@@ -31,5 +31,13 @@
         <h3 id="tituloBloco3" class="tituloSobreMim">Minhas expectativas futuras</h3>
         <p id="textoBloco3" class="textoSobreMim">Hoje, estudo Ciência da Computação com a intenção de unir aquilo que vejo na teoria com o que vivo na prática, no dia a dia com tecnologia. Ou seja, muito além de decorar conceitos e fórmulas, tenho a missão pessoal de entender por que as coisas funcionam do jeito que funcionam, seja em um circuito, em um algoritmo ou na forma como alguém interage com um produto. Tenho um interesse especial em tudo que aproxima hardware, software e pessoas, como se cada camada fosse mais um pedacinho do mapa dessas “cidades” que comecei a enxergar nas placas eletrônicas. À medida que avanço nos estudos, quero estar cada vez mais próxima de projetos que me permitam investigar, experimentar e construir soluções que façam sentido no mundo real, sem perder esse olhar curioso e analítico que sempre guiou o meu caminho.</p>
     </div>
+    <div id="espacoEntreBlocos"></div>
+    <footer>
+        <p>© 2026 Michele Lenz Martins</p>
+        <p>
+            <a class="linkRodape" href="contato.html">Contato</a>
+            <a class="linkRodape" href="https://www.linkedin.com/in/michele-lenz-martins/" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
 </body>
 </html>

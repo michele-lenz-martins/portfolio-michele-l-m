@@ -1,11 +1,34 @@
 /* ---------------------------- CABEÇALHO ---------------------------- */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
 header {
     display: flex; /* como o flexbox está dentro de <header>, não foi preciso criar um container para utilizá-lo */
+    flex-direction: column;
     align-items: center; /* alinhamento de todos os itens verticalmente no centro */
     justify-content: space-between; /* imagens "empurradas" para as extremidades esquerda e direita */
     width: 100%; /* cabeçalho ocupa todo o espaço disponível na tela */
     padding: 10px 12px;
     box-sizing: border-box; /* padding sendo contado dentro da largura do header, para não estourar a largura */
+    position: sticky;
+    top: 0;
+}
+.fundoPreto{
+    background-color: rgb(12,12,12);
+}
+.fundoCinza{
+    background-color: rgb(32, 32, 32);
+}
+#topoHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* mantém os ícones nas extremidades */
+    width: 100%;
+    padding: 10px 12px;
 }
 h1 {
     font-family: 'Courier New', Courier, monospace;
@@ -19,6 +42,12 @@ h1 {
 #icone1,
 #icone2 {
     height: 100px; /* largura fixa dos ícones do cabeçalho */
+}
+nav{
+    width: 100%;
+    border-top: 2px solid rgb(129, 129, 129);
+    border-bottom: 2px solid rgb(129, 129, 129);
+    padding: 10px 0px 10px 0;
 }
 ul.menu { /* lista */
     list-style-type: none; /* tira as marcações (bolinhas) dos itens */
@@ -36,7 +65,7 @@ ul.menu li a { /* links */
     text-decoration: none; /* removidos os sublinhados nos links */
     color:whitesmoke;
 }
-/* ---------------------------- INÍCIO ---------------------------- */
+/* ---------------------------- PÁGINA INDEX ---------------------------- */
 .container {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -54,7 +83,6 @@ ul.menu li a { /* links */
     color: whitesmoke;
     width: 100%;
     text-align: left;
-    padding-right: 40%;
 }
 .destaque{ /* destaque num trecho do texto, somente para fazer um charme decorativo */
     color: yellowgreen; 
@@ -74,7 +102,7 @@ ul.menu li a { /* links */
 .gridSobreMim {
     display: grid; /* primeiro passo para começar a usar o grid, ativando-o para essa div e aplicando a mesma formatação para todos os filhos do gridSobreMim */
     grid-template-columns: 1fr 1fr 1fr; /* criadas 3 colunas, cada qual ocupando 1/3 do espaço disponível no width */
-    grid-template-rows: auto auto 100px auto auto 100px auto auto; /* criadas 8 linhas com altura automática. os 100px no meio representam os espaços fixos entre os blocos*/
+    grid-template-rows: auto auto 60px auto auto 60px auto auto; /* criadas 8 linhas com altura automática. os 60px no meio representam os espaços fixos entre os blocos*/
     gap: 6px; /* espaçamento entre as células do grid, tanto horizontal quanto vertical */
     padding: 20px; /* espaço de preenchimento entre a borda do div e os textos */
     box-sizing: border-box;
@@ -119,7 +147,7 @@ ul.menu li a { /* links */
     margin:0;
 }
 .textoSobreMim{
-    font-size: 22.5px; 
+    font-size: 20px; 
     color: whitesmoke;
     margin-left: 0;
 }
@@ -157,7 +185,7 @@ ul.menu li a { /* links */
 .textoFormacaoDireita {
     grid-column: 2/4;
     padding: 20px;
-    font-size: 22.5px;
+    font-size: 20px;
     margin: 0;
     text-align:left;
     align-self: center;
@@ -165,7 +193,7 @@ ul.menu li a { /* links */
 .textoFormacaoEsquerda {
     grid-column: 1/3;
     padding: 20px;
-    font-size: 22.5px; 
+    font-size: 20px; 
     margin: 0;
     text-align:right;
     align-self: center;
@@ -189,7 +217,7 @@ ul.menu li a { /* links */
 }
 #espacoEntreBlocos{
     grid-column: 1/4;
-    padding: 100px; /*coloquei 100px de padding para dar o mesmo espaçamento que utilizei na página "sobre mim", de forma a uniformizar o estilo do site*/
+    padding: 60px; /*coloquei 60px de padding para dar o mesmo espaçamento que utilizei na página "sobre mim", de forma a uniformizar o estilo do site*/
 }
 #Formacao{
     background-color: rgb(12, 12, 12);
@@ -197,23 +225,13 @@ ul.menu li a { /* links */
 /* ---------------------------- PORTFÓLIO ---------------------------- */
 .gridPortfolio {
     display: grid; /* grid ativado para essa div, aplicando a mesma formatação para todos os filhos do gridFormacao */
-    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas de mesmo tamanho*/
-    grid-template-rows: auto auto;
-    gap: 8px; /* espaçamento entre as células do grid */
+    grid-template-columns: 1fr 1fr; /* 2 colunas de mesmo tamanho*/
+    gap: 16px; /* espaçamento entre as células do grid */
     box-sizing: border-box;
-    font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
-    color:whitesmoke;
-    text-align: center;
     margin: 0 auto;
-    max-width: 2000px;
-    align-items: center;
-    grid-auto-flow: column;
+    max-width: 1200px;
     padding-top: 30px;
-}
-.iconesPortfolio{
-    width: auto; /* ocupa a largura disponível da coluna */
-    height: auto; /* altura proporcional, sem distorcer */
-    max-height: 200px;
+    align-items: start;
 }
 #introPortfolio{
     font-size: 20px;
@@ -224,6 +242,34 @@ ul.menu li a { /* links */
     max-width: 2000px;
     padding-bottom: 30px;
     border-bottom: 2px solid rgb(182, 72, 57);
+}
+.artigoPortfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.iconePortfolio {
+    width: auto; /* ocupa a largura disponível da coluna */
+    height: auto; /* altura proporcional, sem distorcer */
+    max-height: 200px;
+}
+.legendaPortfolio{
+    font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    color:whitesmoke;
+    text-align: center;
+    padding: 20px;
+}
+.artigoYoutube {
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.iconeYT {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    border-radius: 8px;
 }
 #portfolio{
     background-color: rgb(32, 32, 32);
@@ -238,7 +284,7 @@ ul.menu li a { /* links */
     color:whitesmoke;
     text-align: left;
     margin: 0 auto; 
-    width: 300px;
+    width: 800px;
 }
 #introContato{
     font-size: 20px;
@@ -255,27 +301,33 @@ ul.menu li a { /* links */
 #botaoContato{
     font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
     font-size: 20px;
+    width: 100%;
 }
 #contato{
     background-color: rgb(12, 12, 12);
 }
 /* ---------------------------- AJUSTES MOBILE ---------------------------- */
-/* ajuste de visualização para telas médias (tablets) */
+/* .:.:.:.:.:.:.:.:.:.:.:.:.:.:.:. TABLETS .:.:.:.:.:.:.:.:.:.:.:.:.:.:.:. */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-    /*cabeçalho*/
+/*cabeçalho*/
     #icone1,
     #icone2 {
         height: 80px; /* ícones do menu menores para melhor visualização do menu */
     }
+    #topoHeader {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
     h1{
         font-size: 36px;
     }
-    /*menu*/
+/*menu*/
     ul.menu {
         gap: 20px; /* um pouco menos de espaço entre os itens */
         font-size: 18px;
     }
-    /*pagina inicial*/
+/*pagina inicial*/
     .container {
         grid-template-columns: 1fr; /* uma só coluna para melhor visualização */
     }
@@ -286,9 +338,8 @@ ul.menu li a { /* links */
     #apresentacao {
         font-size: 20px;
         text-align: center;
-        padding-right: 10%;
     }
-    /*pagina sobre mim*/
+/*pagina sobre mim*/
     .gridSobreMim {
         grid-template-columns: 1fr;  /* coluna única */
         grid-template-rows: auto; /* quantidade de linhas gerada automaticamente */
@@ -311,7 +362,7 @@ ul.menu li a { /* links */
     #textoBloco2 {
         text-align: left; /* na visualização de PC, estava à direita pois tinham colunas alternadas; aqui, foi padronizado*/
     }
-    /*pagina formacao*/
+/*pagina formacao*/
     .gridFormacao {
         grid-template-columns: 1fr;
         padding: 20px;
@@ -351,7 +402,7 @@ ul.menu li a { /* links */
         grid-column: 1 / 2;
         padding: 30px;
     }
-    /*pagina portfolio*/
+/*pagina portfolio*/
     #introPortfolio {
         font-size: 17px;
         padding: 0 20px 25px 20px;
@@ -362,17 +413,26 @@ ul.menu li a { /* links */
         padding-top: 20px;
         gap: 12px;
     }
-    .iconesPortfolio {
+    .artigoPortfolio {
+        align-items: center;
+    }
+    .artigoYoutube {
+        grid-column: 1/2;
+        align-items: center;
+    }
+    .iconePortfolio {
         max-height: 150px;
-        display: block;
-        margin: 0 auto;
     }
-     .legendaPortfolio {
-        font-size: 17px;
-        text-align: center;
-        padding: 0 20px 30px 20px;
+    .iconeYT {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 6px;
     }
-    /*pagina formulario*/
+.legendaPortfolio {
+    font-size: 17px;
+    padding: 0 20px 25px 20px;
+}
+/*pagina formulario*/
     #introContato {
         font-size: 18px;
         padding: 0 20px 25px 20px;
@@ -399,10 +459,33 @@ ul.menu li a { /* links */
         padding: 10px;
     }
 }
-
-/* ajuste de visualização para telas pequenas (celulares) */
+/* ---------------------------- RODAPÉ ---------------------------- */
+footer {
+    text-align: center;
+    color: yellowgreen;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: auto;
+    line-height: 0.5;
+    padding: 10px;
+    border-top: 2px solid rgb(129, 129, 129);
+}
+.linkRodape { 
+    text-decoration: none;
+    color: yellowgreen;
+}
+a.linkRodape:hover { /* mouse em cima */
+    color: rgb(182, 72, 57);
+    font-weight: bold;
+    font-size: medium;
+}
+a.linkRodape:active { /* momento do clique */
+    color: whitesmoke;
+    text-decoration: underline;
+}
+/* .:.:.:.:.:.:.:.:.:.:.:.:.:.:.:. CELULARES .:.:.:.:.:.:.:.:.:.:.:.:.:.:.:. */
 @media only screen and (max-width: 480px) { 
-    /*cabeçalho*/
+/*cabeçalho*/
     header {
         flex-direction: column; /* empilha os elementos verticalmente */
         text-align: center;
@@ -410,14 +493,18 @@ ul.menu li a { /* links */
     }
     #icone1,
     #icone2 {
-        width: 60px;/* redução do tamanho das imagens do menu */
-        height: 60px;
+        height: 60px; /* redução do tamanho das imagens do menu */
+    }
+    #topoHeader {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
     }
     h1{
         font-size: 28px;
         margin: 8px 0;
     }
-    /*menu*/
+/*menu*/
     ul.menu {
         flex-direction: column; /* itens do menu em coluna */
         align-items: center;
@@ -425,7 +512,7 @@ ul.menu li a { /* links */
         font-size: 16px;
         padding: 10px 0;
     }
-    /*pagina inicial*/
+/*pagina inicial*/
     .container {
         grid-template-columns: 1fr; /* uma só coluna */
     }
@@ -436,9 +523,8 @@ ul.menu li a { /* links */
     #apresentacao {
         font-size: 18px;
         text-align: center;
-        padding: 10px;
     }
-    /*página sobre mim*/
+/*página sobre mim*/
     .gridSobreMim {
         grid-template-columns: 1fr; 
         grid-template-rows: auto;  /* linhas automáticas, sem os 100px fixos */
@@ -465,7 +551,7 @@ ul.menu li a { /* links */
     #textoBloco2 {
         text-align: left;
     }
-    /* página formacao*/
+/* página formacao*/
     .gridFormacao {
         grid-template-columns: 1fr;
         padding: 15px;
@@ -503,31 +589,40 @@ ul.menu li a { /* links */
         height: auto;
     }
     #espacoEntreBlocos {
-        grid-column: 1 / 2;
+        grid-column: 1/2;
         padding: 20px;
     }
-    /*pagina portfolio*/
-    #introPortfolio {
+/*pagina portfolio*/
+    #introPortfolio { 
         font-size: 16px;
         padding: 0 15px 20px 15px;
     }
     .gridPortfolio {
         grid-template-columns: 1fr;  /* uma coluna só */
-        grid-auto-flow: row;         /* fluxo volta a ser por linha */
         padding-top: 15px;
         gap: 10px;
     }
-    .iconesPortfolio {
+    .artigoPortfolio {
+        align-items: center;
+    }
+    .artigoYoutube {
+        grid-column: 1/2;
+        align-items: center  
+    }
+    .iconePortfolio {
         max-height: 120px;
-        display: block;
-        margin: 0 auto;  
+    }
+    .iconeYT {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 6px;
     }
     .legendaPortfolio {
         font-size: 15px;
         text-align: center;
-        padding: 0 15px 30px 15px; 
+        padding: 0 15px 30px 15px;
     }
-    /*pagina formulario*/
+/*pagina formulario*/
     #introContato {
         font-size: 16px;
         padding: 0 15px 20px 15px;
